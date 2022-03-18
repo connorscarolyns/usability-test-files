@@ -1,0 +1,441 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Form response: Screening Questionnaire - Research for the online firearms licence application</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+ 
+      <script>
+    (function ($) {
+$(function () {
+    $.widget("blk.transpose", {
+        options: { mode: 0 }, _create: function () { this.sourceTableID = "#" + $(this.element).prop("id") }, transpose: function () { if (this.options.mode == 0) this._tpVertical(); else if (this.options.mode == 1) this._tpHorizontal(); this.element.data("tp_mode", this.options.mode) }, _tpHorizontal: function () {
+            var srcTableID = this.sourceTableID; var uniqueID = $($(srcTableID).uniqueId()).prop("id"); var hasHeader = $(srcTableID + " > thead").length > 0; var col = 0; $(srcTableID + " > tbody > tr").each(function () {
+                col =
+                0; $(this).hide().addClass("tp_src_rows"); $(this.cells).each(function () {
+                    if ($(this).is("th")) { if (!hasHeader) { var newHeader = $("<thead></thead>").appendTo($(srcTableID)); $("<tr></tr>").appendTo($(newHeader)).addClass("tp_rows"); hasHeader = true } $(srcTableID + " > thead > tr").append($(this).remove().clone()) } else {
+                        var $newrow = null; var rowID = "tp_row_" + uniqueID + "_" + col; if ($("#" + rowID).length == 0) { $newrow = $("<tr id=" + rowID + "></tr>"); $newrow.addClass("tp_rows"); $(srcTableID + "> tbody:last").append($newrow) } else $newrow =
+                            $("#" + rowID); $newrow.append($(this).remove().clone()); col++
+                    }
+                })
+            })
+        }, _tpVertical: function () {
+            var srcTableID = this.sourceTableID; var uniqueID = $($(srcTableID).uniqueId()).prop("id"); var hasHeader = $(srcTableID + " > thead").length > 0; if (hasHeader) {
+                $(srcTableID + " > thead").hide(); $(srcTableID + " > thead > tr").each(function () {
+                    $(this.cells).each(function (index, hcell) {
+                        var $newrow = null; var rowID = "tp_row_" + uniqueID + "_" + index; if ($("#" + rowID).length == 0) {
+                            $newrow = $("<tr id=" + rowID + "></tr>"); $newrow.addClass("tp_rows");
+                            $(srcTableID + "> tbody:last").append($newrow)
+                        } else $newrow = $("#" + rowID); var $newHCell = $("<th>" + $(hcell).text().trim() + "</th>"); $newrow.append($newHCell)
+                    })
+                })
+            } $(srcTableID + " > tbody > tr").each(function () {
+                if (!$(this).hasClass("tp_rows")) {
+                    $(this).hide(); $(this.cells).each(function (index, dcell) {
+                        var $newrow = null; var rowID = "tp_row_" + uniqueID + "_" + index; if ($("#" + rowID).length == 0) { $newrow = $("<tr id=" + rowID + "></tr>"); $newrow.addClass("tp_rows"); $(srcTableID + "> tbody:last").append($newrow) } else $newrow = $("#" +
+                            rowID); $newrow.append($(this).remove().clone())
+                    })
+                }
+            })
+        }, reset: function () { if (this.options.mode == 0) this._resetVertical(); else if (this.options.mode == 1) this._resetHorizontal(); $(this.sourceTableID).removeData("tp_mode") }, _resetHorizontal: function () {
+            var srcTableID = this.sourceTableID; var tpSrcRows = $(srcTableID + " > tbody > tr.tp_src_rows"); var col = 0; $(srcTableID + " > thead > tr").each(function () { $(this.cells).each(function () { $(tpSrcRows[col]).append($(this).remove().clone()); col++ }) }); $(srcTableID + " > thead").empty().remove();
+            var tpRows = $(srcTableID + " > tbody > tr.tp_rows"); $(tpRows).each(function () { col = 0; $(this.cells).each(function () { $(tpSrcRows[col]).append($(this).remove().clone()); col++ }) }); $(tpRows).remove(); $(tpSrcRows).removeClass("tp_src_rows"); $(tpSrcRows).show()
+        }, _resetVertical: function () {
+            var srcTableID = this.sourceTableID; var tpRows = $(srcTableID + " > tbody > tr.tp_rows"); var col = 0; tpRows.each(function (index, value) {
+                $(value.cells).each(function () {
+                    if ($(this).is("th")); else {
+                        $($(srcTableID + " > tbody > tr")[col]).append($(this).remove().clone());
+                        $($(srcTableID + " > tbody > tr")[col]).show(); col++
+                    }
+                }); $(value).remove(); col = 0
+            }); $(srcTableID + " > thead").show()
+        }
+    })
+})
+})(jQuery);
+  </script>
+
+  <style>
+      dt{font-weight:bold; margin-bottom: 0.5rem;}
+      dd{margin-bottom: 2rem; margin-inline-start: 0;}
+      th, td{
+          width: 50%;
+      }
+      .btn.active .copied{
+          display: inline-block;
+      }
+      .btn.inactive .copied{
+          display: none;
+      }
+  </style>
+
+
+<script>
+    $(document).ready(function() {
+        $('.menu').on('click', '.btn', function() {
+            $('.menu .btn.active').removeClass('active').addClass('inactive');
+            $(this).addClass('active').removeClass('inactive');
+        });
+    });
+</script>
+
+</head>
+
+<body>
+    <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
+  <!-- your content here... -->
+  <main id="main" class="container">
+    <h1 class="my-4">Form response: Screening Questionnaire - Research for the online firearms licence application</h1>
+    <p><strong>Date submitted: </strong>7 March 2021</p>
+    <p><strong>Response number: </strong>XXXXXX</p>
+
+    <nav>
+        <h2>Choose the format you'd like to work with:</h2>
+        <ul>
+            <li><a href="#easyReading">Easy Reading Option</a></li>
+            <li><a href="#copyPaste">Copy and Paste Option</a></li>
+            <li><a href="#spreadsheet">Spreadsheet Option</a></li>
+        </ul>
+    </nav>
+<hr>
+
+    <article id="easyReading">
+        <h2 class="mb-4">Easy reading option</h2>
+
+        <dl>
+            <dt>Full name (required)</dt>
+            <dd>Carolyn Connors</dd>
+
+            <dt>Email address (required)</dt>
+            <dd>carolyn.connors@cds-snc.ca</dd>
+
+            <dt>Preferred language for communication (required)</dt>
+            <dd>English</dd>
+
+            <dt>How old are you? (required)</dt>
+            <dd>35 - 44 years old</dd>
+
+            <dt>Gender (required)</dt>
+            <dd>Female</dd>
+
+            <dt>Which option most accurately describes where you live? (required)</dt>
+            <dd>City (population is between 10,000 and 1,000,000)</dd>
+
+            <dt>Do you have access to a laptop or desktop computer? (required)</dt>
+            <dd>Yes</dd>
+
+            <dt>Do you have access to a stable internet connection with medium to high speed? (required)</dt>
+            <dd>Yes</dd>
+
+            <dt>How comfortable are you with using a computer, tablet, or smartphone to fill out forms and apply for services online? (required)</dt>
+            <dd>Very comfortable</dd>
+
+            <dt>Do you self-identify as having a disability? (required)</dt>
+            <dd>Yes</dd>
+
+            <dt>Optional: If you wish to provide further details, please select the boxes that apply to you.</dt>
+            <dd>Other disability (including: learning disabilities, developmental disabilities, and all other types of disabilities)</dd>
+
+            <dt>Are you an Indigenous person? (required)</dt>
+            <dd>No</dd>
+
+            <dt>Optional: If you wish to provide further details, please specify the group to which you belong.</dt>
+            <dd><i>No response</i></dd>
+
+            <dt>Are you a member of a visible minority group? (required)</dt>
+            <dd>No</dd>
+
+            <dt>Optional: If you wish to provide further details, please select the box(es) that best describes your origin.</dt>
+            <dd><i>No response</i></dd>
+
+            <dt>What is your primary language? (required)</dt>
+            <dd>English</dd>
+
+            <dt>Would you be interested in participating in future research studies with the Canadian Firearms Program (CFP)? (required)</dt>
+            <dd>Yes</dd>
+
+            <dt>Check the box below to confirm you have read the privacy statement (required)</dt>
+            <dd>Yes</dd>
+            
+        </dl> 
+
+ 
+
+</article>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
+
+    <article id="copyPaste">
+        <h2 class="mb-4">Copy and paste option</h2>
+
+        <div class="menu d-flex align-items-baseline flex-column align-items-stretch">
+            <p class="mr-2">Full name (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#name, #email')">
+                Copy answer: <span id="name">Carolyn Connors</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Email address (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#email')">
+                Copy answer: <span id="email">carolyn.connors@cds-snc.ca</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Preferred language for communication (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#prelang')">
+                Copy answer: <span id="prelang">English</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">How old are you? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#age')">
+                Copy answer: <span id="age">35 - 44 years old</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Gender (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#gender')">
+                Copy answer: <span id="gender">Female</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Which option most accurately describes where you live? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#region')">
+                Copy answer: <span id="region">City (population is between 10,000 and 1,000,000)</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Do you have access to a laptop or desktop computer? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#laptop')">
+                Copy answer: <span id="laptop">Yes</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Do you have access to a stable internet connection with medium to high speed? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#internet')">
+                Copy answer: <span id="internet">Yes</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">How comfortable are you with using a computer, tablet, or smartphone to fill out forms and apply for services online? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#comfortable')">
+                Copy answer: <span id="comfortable">Very comfortable</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Do you self-identify as having a disability? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#identify')">
+                Copy answer: <span id="identify">Yes</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Optional: If you wish to provide further details, please select the boxes that apply to you.</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#identitydetails')">
+                Copy answer: <span id="identitydetails">Other disability (including: learning disabilities, developmental disabilities, and all other types of disabilities)</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Are you an Indigenous person? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#Indigenous')">
+                Copy answer: <span id="Indigenous">No</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Optional: If you wish to provide further details, please specify the group to which you belong.</p>
+            <p class="mt-0 mb-4"><i>No response</i></p>
+
+            <p class="mr-2">Are you a member of a visible minority group? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#minority')">
+                Copy answer: <span id="minority">No</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Optional: If you wish to provide further details, please select the box(es) that best describes your origin.</p>
+            <p class="mt-0 mb-4"><i>No response</i></p>
+
+            <p class="mr-2">What is your primary language? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#priLang')">
+                Copy answer: <span id="priLang">English</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Would you be interested in participating in future research studies with the Canadian Firearms Program (CFP)? (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#future')">
+                Copy answer: <span id="future">Yes</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+
+            <p class="mr-2">Check the box below to confirm you have read the privacy statement (required)</p>
+            <button type="button" class="btn btn-outline-secondary text-left mb-4 inactive" onclick="copyToClipboard('#consent')">
+                Copy answer: <span id="consent">Yes</span>  <span class="copied px-2 bg-white ml-2" style="color: green;">Copied to clipboard</span>
+            </button>
+        </div>
+
+    </article>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+    
+
+    <article id="spreadsheet">
+        <h2 class="mb-4">Spreadsheet option</h2>
+
+        <button id="btnTpHorizontal" class="btn mb-4 btn-outline-secondary">Switch to row layout</button>
+
+        <div class="table-responsive-">
+
+            
+
+            <table id='table2' class="table mb-4 ">
+                <caption class="sr-only">Spreadsheet option</caption>
+                <!-- <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Questions</th>
+                        <th scope="col">Answers</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr>
+                        <th scope="row">Full name (required)</th>
+                        <td>Carolyn Connors </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email address (required)</th>
+                        <td>carolyn.connors@cds-snc.ca </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Preferred language for communication (required)</th>
+                        <td>English </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">How old are you? (required)</th>
+                        <td>35 - 44 years old </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Gender (required)</th>
+                        <td>Female </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Which option most accurately describes where you live? (required)</th>
+                        <td>City (population is between 10,000 and 1,000,000) </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Do you have access to a laptop or desktop computer? (required)</th>
+                        <td>Yes </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Do you have access to a stable internet connection with medium to high speed? (required)</th>
+                        <td>Yes </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">How comfortable are you with using a computer, tablet, or smartphone to fill out forms and apply for services online? (required)</th>
+                        <td>Very comfortable </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Do you self-identify as having a disability? (required)</th>
+                        <td>Yes </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Optional: If you wish to provide further details, please select the boxes that apply to you.</th>
+                        <td>Other disability (including: learning disabilities, developmental disabilities, and all other types of disabilities)  </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Are you an Indigenous person? (required)</th>
+                        <td>No </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Optional: If you wish to provide further details, please specify the group to which you belong.</th>
+                        <td>No Response </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Optional: If you wish to provide further details, please select the box(es) that best describes your origin.</th>
+                        <td>No Response  </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">What is your primary language? (required)</th>
+                        <td>English </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Would you be interested in participating in future research studies with the Canadian Firearms Program (CFP)? (required)</th>
+                        <td>Yes </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Check the box below to confirm you have read the privacy statement (required)</th>
+                        <td>Yes </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <script type="text/javascript">
+            $(function () {
+                //initialize
+                if (!$("#table1").is(":blk-transpose"))
+                    $("#table1").transpose({ mode: 0 });
+    
+                if (!$("#table2").is(":blk-transpose"))
+                    $("#table2").transpose({ mode: 1});
+            });
+    
+            $("#btnTpVertical").click(function () {
+                var currentMode = $("#table1").data("tp_mode");
+                if (currentMode == undefined) {
+                    $("#table1").transpose("transpose");
+                    $("#btnTpVertical").html("Reset");
+                }
+                else {
+                    $("#table1").transpose("reset");
+                    $("#btnTpVertical").html("Transpose");
+                }
+            });
+    
+            $("#btnTpHorizontal").click(function () {
+                var currentMode = $("#table2").data("tp_mode");
+                if (currentMode == undefined) {
+                    $("#table2").transpose("transpose");
+                    $("#btnTpHorizontal").html("Switch to column layout");
+                }
+                else {
+                    $("#table2").transpose("reset");
+                    $("#btnTpHorizontal").html("Switch to row layout");
+                }
+            });
+        </script>
+            
+
+
+        </div>
+    </article>
+
+  </main>
+
+
+  <script>
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+</script>
+
+
+</body>
+</html>
